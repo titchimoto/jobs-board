@@ -35,6 +35,12 @@ source 'https://rubygems.org'
 
  gem 'thor', '0.19.1'
 
+ gem 'bootstrap', '~> 4.0.0'
+
+ gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+
+
  group :development do
    gem 'listen', '~> 3.0.5'
  end

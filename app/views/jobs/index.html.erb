@@ -1,0 +1,16 @@
+<h1>All Jobs</h1>
+
+<div class="row">
+  <div class="col-md-9">
+    <% @jobs.each do |job| %>
+    <ul class="list-group">
+      <li class="list-group-item"><%= link_to job.title, job %> - <%= job.location %></li>
+    </ul>
+    <% end %>
+  </div>
+
+  <div class="col-md-3">
+    <%= link_to "Post A New Job", new_job_path, class: 'btn btn-info btn-block' %>
+  </div>
+
+</div>

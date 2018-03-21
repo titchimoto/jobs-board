@@ -18,7 +18,7 @@
 
     <div class="container">
       <ul class="nav">
-        <li class="nav-item"><%= link_to "Home", welcome_index_path %></li>
+        <li class="nav-item"><%= link_to "Home", root_path %></li>
         <li class="nav-item"><%= link_to "About", welcome_about_path %></li>
       </ul>
 
@@ -31,10 +31,21 @@
         <li><%= link_to "Sign In", new_user_session_path %></li>
       <% end %>
       </ul>
+    </div>
 
+    <div class="container">
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-warning">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+    </div>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% end %>
 
     <%= yield %>
 

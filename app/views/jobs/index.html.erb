@@ -2,15 +2,60 @@
 
 <div class="row">
   <div class="col-md-9">
-    <% @jobs.each do |job| %>
-    <ul class="list-group">
-      <li class="list-group-item"><%= link_to job.title, job %> - <%= job.location %></li>
-    </ul>
-    <% end %>
+    <!-- <ul class="list-group"> -->
+
+      <% @jobs.each do |job| %>
+      <div class="row job-listing">
+
+
+      <div class="col-md-7">
+      <!-- <li class="list-group-flush"> -->
+        <p class="job-title"><strong><%= link_to job.title, job %></strong></p>
+        <p><small>Natural Doctors of Portland, OR</small></p>
+        <p><small><%= job.body.first(70) + "..." %></small></p>
+
+      </div>
+
+      <div class="col-md-3">
+        <%= job.location %>
+      </div>
+      <div class="col-md-2">
+        <%= job.created_at.strftime("%B %d %Y") %>
+      </div>
+    <!-- </li> -->
+
   </div>
 
-  <div class="col-md-3">
-    <%= link_to "Post A New Job", new_job_path, class: 'btn btn-info btn-block' %>
-  </div>
+<% end %>
+<!-- </ul> -->
+</div>
+
+<div class="col-md-3">
+  <%= link_to "Post A New Job", new_job_path, class: 'btn btn-info btn-block' %>
+</div>
+
+
+
+<!-- <% @jobs.each do |job| %>
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to job.title, job %></h5>
+          <p class="card-subtitle mb-2 text-muted"><small>Natural Doctors of Portland, OR</small></p>
+          <p class="card-text"><small><%= job.body.first(70) + "..." %></small></p>
+
+          <a href="#" class="btn btn-info">Read More</a>
+        </div>
+      </div>
+    </div>
+  <% end %> -->
+
+
+
+
+
+
+
+
 
 </div>

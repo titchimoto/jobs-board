@@ -41,7 +41,9 @@ source 'https://rubygems.org'
 
  gem 'devise'
 
-
+group :test do
+  gem 'faker'
+end
 
  group :development do
    gem 'listen', '~> 3.0.5'

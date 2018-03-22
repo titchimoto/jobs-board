@@ -1,0 +1,4 @@
+<% @user.favorites.each do |fav| %>
+  <small><%= link_to fav.job.title, fav.job %><br /><%= fav.job.location %></small><br />
+  <small>Posted <%= distance_of_time_in_words_to_now(fav.job.created_at) %> ago.</small><br />
+<% end %>

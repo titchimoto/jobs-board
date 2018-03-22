@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :jobs
+  resources :jobs do
+    resources :favorites, only: [:create, :destroy]
+  end
 
 
   devise_for :users

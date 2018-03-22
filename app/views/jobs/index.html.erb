@@ -1,4 +1,5 @@
-<h1>Latest Jobs</h1>
+<h1 class="latest-jobs">Latest Jobs</h1>
+<small><%= Job.count %> active job listings.</small>
 
 <div class="row">
   <div class="col-md-9">
@@ -35,7 +36,8 @@
   </div>
   <% elsif user_is_standard %>
   <div class="col-md-3">
-    Saved Jobs:
+    <p>Saved Jobs:</p>
+    <%= render partial: 'favorites/show', locals: { job: @job } %>
   </div>
   <% else %>
   <div class="col-md-3">

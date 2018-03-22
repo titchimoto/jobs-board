@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Job, type: :model do
-  let (:user) { User.create!(username: "Theobear", email: "theo@meowmeowmeow.com", password: "password").confirm }
+  let (:user) { User.create!(username: "Theocat", email: "theobear@meowmeow.com", password: "password", role: 0) }
   let (:job) { Job.create!(title: "New Job Title", location: "Portland, OR", body: "This is the body of the job description", user: user) }
+
+  it { is_expected.to have_many(:favorites) }
 
   it { is_expected.to belong_to(:user) }
 
@@ -17,6 +19,10 @@ RSpec.describe Job, type: :model do
 
 
   describe "attributes" do
+    before do
+      user.confirm
+    end
+
     it "has a title attribute" do
       expect(job).to have_attributes(title: "New Job Title")
     end

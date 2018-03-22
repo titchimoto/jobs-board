@@ -1,3 +1,13 @@
+<% if @job.errors.any? %>
+<div class="alert alert-danger">
+  <h4> <%= pluralize(@job.errors.count, "error") %>.</h4>
+  <ul>
+    <% @job.errors.full_messages.each do |msg| %>
+    <li><%= msg %>
+      <% end %>
+  </ul>
+</div>
+<% end %>
 <div class="row">
   <div class="col-md-4">
     <p>Suggestions for Job Listings</p>

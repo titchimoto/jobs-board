@@ -41,6 +41,8 @@ source 'https://rubygems.org'
 
  gem 'devise'
 
+ gem 'pundit'
+
 group :test do
   gem 'faker'
 end
@@ -52,4 +54,5 @@ end
  group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
+  gem 'shoulda'
 end

@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  include Pundit
 
   def index
     @jobs = Job.all
@@ -10,10 +11,14 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    authorize @job
   end
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
+
+    authorize @job
 
     if @job.save
       flash[:notice] = "Job listing was successfully created."
@@ -27,6 +32,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    authorize @job
   end
 
 

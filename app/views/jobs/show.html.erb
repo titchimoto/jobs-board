@@ -1,15 +1,18 @@
 <h1><%= @job.title %></h1>
-<p>Natural Doctors of Seattle - <%= @job.location %></p>
+<p><%= @job.user.username%> - <%= @job.location %></p>
 <p><small>Posted on: <%= @job.created_at.strftime("%B %d %Y") %></small></p>
 
 <div class="row">
   <div class="col-md-9">
     <p><%= @job.body %></p>
+    <% if user_is_job_owner %>
     <%= link_to "Edit", edit_job_path(@job), class: 'btn btn-success' %>
     <%= link_to "Delete", @job, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this job listing?' } %>
+    <% end %>
   </div>
+  <% if user_signed_in? %>
   <div class="col-md-3">
     <%= link_to "Save Job", "#", class: 'btn btn-info btn-block' %>
-
   </div>
+  <% end %>
 </div>

@@ -12,6 +12,13 @@
  *
  */
 
+
+.brand-name {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.0rem;
+
+}
+
 .job-index-location {
   font-size: 0.8rem;
 }
@@ -25,7 +32,6 @@
    margin-bottom: 10px;
    border-bottom: 0px solid #aaa;
    padding: 10px 5px 5px 5px;
-
  }
 
  .job-title {
@@ -37,7 +43,17 @@
    padding-bottom: 10px;
  }
 
+ .users-show {
+   margin-top: 20px;
+ }
+
+ .users-bio {
+   background: #f7f7f7;
+   padding: 10px 0px 10px 0px;
+ }
 
 
+
+ @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
  @import "bootstrap";

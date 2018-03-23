@@ -1,0 +1,41 @@
+<div class="container users-show">
+
+  <div class="text-center"><%= image_tag @user.avatar_url(96) %></div>
+
+  <h1 class="text-center"><%= @user.username %></h1>
+  <!-- <span class="text-center badge badge-light"><%= @user.role.capitalize %></span> -->
+
+  <h6 class="text-center"><%= @user.email %></h6>
+  <p class="text-center">About <%= @user.username %>: </p>
+  <% if @user.standard? && !@user.bio %>
+    <em><p class="text-center">Edit your Profile to tell prospective employers a little something about yourself.</p></em>
+  <% elsif @user.employer? && !@user.bio %>
+    <em><p class="text-center">Edit your Profile to tell prospective employees a little something about your business.</p></em>
+  <% else %>
+    <p class="text-center users-bio"><%= @user.bio %></p>
+  <% end %>
+
+
+  <% if @user == current_user %>
+  <div class="text-center">
+    <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-info' %>
+    <%= link_to "Change Password", edit_user_registration_path, class: 'btn btn-danger' %>
+  </div>
+
+  <% end %>
+
+
+
+<% if current_user %>
+<div class="row users-show">
+  <div class="col-md-6">
+    Recently Favorited Jobs: <br />
+    <%= render partial: 'favorites/show', locals: { job: @job } %>
+  </div>
+  <div class="col-md-6">
+    Recently Favorited Jobs: <br />
+    <%= render partial: 'favorites/show', locals: { job: @job } %>
+  </div>
+<% end %>
+
+</div>

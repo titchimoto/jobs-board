@@ -35,6 +35,7 @@
   <div class="col-md-3">
     <p>Saved Jobs:</p>
     <%= render partial: 'favorites/show', locals: { job: @job } %>
+    <%= render partial: 'charges/upgrade', locals: { job: @job } %>
   </div>
   <% else %>
   <div class="col-md-3">

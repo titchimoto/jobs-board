@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row upgrade-view">
+    <div class="col-md-12">
+      <h1>Upgrade to Employer Account</h1>
+    </div>
+    <div class="col-md-12">
+
+      <p>As an <strong>Employer</strong> you can: </p>
+      <ul>
+        <li>Post as many job listings as you like!</li>
+        <li>Gain access to top quality candidates.</li>
+        <li>Respond to applicants directly through the site, without the need for extra communications.</li>
+      </ul>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <div class="row upgrade-view">
+    <div class="col-md-12">
+      <h4>Cost: $10</h4>
+      <%= form_tag charges_path do %>
+        <script class='stripe-button btn-block' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount="<%= @stripe_btn_data[:amount] %>" data-description="<%= @stripe_btn_data[:description] %>" ></script>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>

@@ -46,6 +46,11 @@ source 'https://rubygems.org'
  gem 'will_paginate', '3.1.5'
  gem 'bootstrap-will_paginate', '1.0.0'
 
+ gem 'stripe'
+
+ gem 'figaro', '1.0'
+
+
 group :test do
   gem 'faker'
 end

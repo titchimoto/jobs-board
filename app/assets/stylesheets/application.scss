@@ -52,6 +52,36 @@
    padding: 10px 0px 10px 0px;
  }
 
+ .my-pagination {
+  text-align: center;
+  padding: 0.3em;
+  cursor: default; }
+  .my-pagination a, .my-pagination span, .my-pagination em {
+    padding: 0.2em 0.5em; }
+  .my-pagination .disabled {
+    color: #aaaaaa; }
+  .my-pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    color: #ff0084; }
+  .my-pagination a {
+    border: 1px solid #dddddd;
+    color: #0063dc;
+    text-decoration: none; }
+    .my-pagination a:hover, .my-pagination a:focus {
+      border-color: #003366;
+      background: #0063dc;
+      color: white; }
+  .my-pagination .page_info {
+    color: #aaaaaa;
+    padding-top: 0.8em; }
+  .my-pagination .previous_page, .my-pagination .next_page {
+    border-width: 2px; }
+  .my-pagination .previous_page {
+    margin-right: 1em; }
+  .my-pagination .next_page {
+    margin-left: 1em; }
+
 
 
  @import url('https://fonts.googleapis.com/css?family=Fredoka+One');

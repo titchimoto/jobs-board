@@ -43,6 +43,9 @@ source 'https://rubygems.org'
 
  gem 'pundit'
 
+ gem 'will_paginate', '3.1.5'
+ gem 'bootstrap-will_paginate', '1.0.0'
+
 group :test do
   gem 'faker'
 end

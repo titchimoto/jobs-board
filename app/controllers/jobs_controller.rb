@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   include Pundit
 
   def index
-    @jobs = Job.all
+    @jobs = Job.paginate(page: params[:page], per_page: 20)
     @user = current_user
   end
 

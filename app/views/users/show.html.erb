@@ -1,6 +1,6 @@
 <div class="container users-show">
 
-  <div class="text-center"><%= image_tag @user.avatar_url(96) %></div>
+  <div class="text-center"><%= image_tag @user.avatar_url(96), class: 'rounded-circle' %></div>
 
   <h1 class="text-center"><%= @user.username %></h1>
   <!-- <span class="text-center badge badge-light"><%= @user.role.capitalize %></span> -->

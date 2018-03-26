@@ -14,6 +14,10 @@ end
 jobs = Job.all
 
 100.times do
+  Favorite.create!(user: users.sample, job: jobs.sample)
+end
+
+100.times do
   Candidate.create!(body: Faker::Lorem.sentence(2), job: jobs.sample, user: users.sample)
 end
 
@@ -26,3 +30,4 @@ puts "Seed Finished"
 puts "#{User.count} users created."
 puts "#{Job.count} job listings created."
 puts "#{Candidate.count} job candidates created."
+puts "#{Favorite.count} job favorites created."

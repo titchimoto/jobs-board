@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
   include Pundit
 
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @jobs = Job.paginate(page: params[:page], per_page: 20)
     @user = current_user

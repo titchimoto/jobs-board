@@ -1,20 +1,20 @@
 class UserPolicy < ApplicationPolicy
   include Devise
 
-  attr_reader :user, :job
+  attr_reader :user, :users
 
-  def initialize(user, job)
+  def initialize(user, users)
     @user = user
-    @job = job
+    @users = users
   end
 
   def show?
-    user.present?
+    user.present? && (user == users || user.employer?)
   end
 
 
   def update?
-    user.present? && (user)
+    user == users
   end
 
 

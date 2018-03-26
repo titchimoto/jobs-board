@@ -12,7 +12,7 @@ class JobPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present?
+    user.present? && user.employer?
   end
 
   def update?

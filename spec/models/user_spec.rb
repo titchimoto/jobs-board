@@ -4,8 +4,8 @@ RSpec.describe User, type: :model do
   let(:user) { User.create!(username: "Theobear", email: "theo@meowmeowmeow.com", password: "password", role: 0) }
   let(:known_user) { User.create!(username: "Theobear", email: "blochead@bloc.io", password: "password", role: 0) }
 
-
   it { is_expected.to have_many(:favorites) }
+  it { is_expected.to have_many(:candidates) }
   it { is_expected.to have_many(:jobs) }
 
 
@@ -68,6 +68,21 @@ RSpec.describe User, type: :model do
     it "returns the appropriate favorite if it exists" do
       favorite = user.favorites.where(job: @job).create
       expect(user.favorite_for(@job)).to eq(favorite)
+    end
+  end
+
+  describe "#candidate_for(job)" do
+    before do
+      @job = Job.create!(title: "New Job Title", location: "Portland, OR", body: "This is the body of the job description", user: user)
+    end
+
+    it "returns nil if the user has not favorited the post" do
+      expect(user.candidate_for(@job)).to be_nil
+    end
+
+    it "returns the appropriate favorite if it exists" do
+      candidate = Candidate.create!(body: "This is why you should consider me for this position...", user: user, job: @job)
+      expect(user.candidate_for(@job)).to eq(candidate)
     end
   end
 

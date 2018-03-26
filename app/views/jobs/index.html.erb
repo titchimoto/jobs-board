@@ -35,14 +35,14 @@
   </div>
   <% elsif user_is_standard %>
   <div class="col-md-3">
+    <%= render partial: 'charges/upgrade', locals: { job: @job } %>
     <p>Saved Jobs:</p>
     <%= render partial: 'favorites/show', locals: { job: @job } %>
-    <%= render partial: 'charges/upgrade', locals: { job: @job } %>
   </div>
   <% else %>
   <div class="col-md-3">
-    Looking for a new job? Sign up for a new account today!
     <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-info btn-block' %>
+    Looking for a new job? Sign up for a new account today to <strong>Apply to Jobs</strong> & <strong>Save Favorite Jobs for later.</strong>
   </div>
 <% end %>
 

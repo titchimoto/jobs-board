@@ -1,5 +1,5 @@
 <h1><%= @job.title %></h1>
-<p><%= link_to @job.user.username, user_path %> - <%= @job.location %></p>
+<p><%= link_to @job.user.username, @job.user %> - <%= @job.location %></p>
 <p><small>Posted on: <%= @job.created_at.strftime("%B %d %Y") %></small></p>
 
 <div class="row">

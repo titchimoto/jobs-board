@@ -50,6 +50,8 @@ source 'https://rubygems.org'
 
  gem 'figaro', '1.0'
 
+ gem 'ionicons-rails'
+
 
 group :test do
   gem 'faker'

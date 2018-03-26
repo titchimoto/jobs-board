@@ -1,0 +1,9 @@
+<div class="media">
+  <div class="media-body">
+    <small>
+      <h6><%= link_to candidate.user.username, candidate.user %></h6>
+      applied <%= time_ago_in_words(candidate.created_at) %> ago.
+    </small>
+    <p><%= candidate.body %></p>
+  </div>
+</div>

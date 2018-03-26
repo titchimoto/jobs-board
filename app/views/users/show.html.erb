@@ -33,8 +33,8 @@
     <%= render partial: 'favorites/show', locals: { job: @job } %>
   </div>
   <div class="col-md-6">
-    Recently Favorited Jobs: <br />
-    <%= render partial: 'favorites/show', locals: { job: @job } %>
+    Recently Applied Jobs: <br />
+    <%= render partial: 'candidates/candidates', locals: { job: @job } %>
   </div>
 <% end %>
 

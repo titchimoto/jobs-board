@@ -11,11 +11,18 @@ users = User.all
   Job.create!(title: Faker::Lorem.unique.sentence(2), location: Faker::Address.city, body: Faker::Lorem.paragraph(5), user: users.sample)
 end
 
+jobs = Job.all
+
+100.times do
+  Candidate.create!(body: Faker::Lorem.sentence(2), job: jobs.sample, user: users.sample)
+end
+
 me = User.create!(username: "Theo", email: "theo@meowmeowmeow.com", password: "password")
 
 
 
 
 puts "Seed Finished"
-puts "#{User.count} users created"
-puts "#{Job.count} job listings created"
+puts "#{User.count} users created."
+puts "#{Job.count} job listings created."
+puts "#{Candidate.count} job candidates created."

@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :jobs, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :candidates, dependent: :destroy
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 1, maximum: 50 }
 
@@ -18,6 +19,10 @@ class User < ApplicationRecord
 
   def favorite_for(job)
     favorites.where(job_id: job.id).first
+  end
+
+  def candidate_for(job)
+    candidates.where(job_id: job.id).first
   end
 
   def avatar_url(size)

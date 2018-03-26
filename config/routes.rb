@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
   end
 
+  resources :jobs, only: [] do
+    resources :candidates, only: [:create, :destroy]
+  end
+
 
 
   devise_for :users

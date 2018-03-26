@@ -1,0 +1,4 @@
+<% @user.candidates.each do |candidate| %>
+  <small><%= link_to candidate.job.title, candidate.job %><br /><%= candidate.job.location %></small><br />
+  <small>Applied <%= distance_of_time_in_words_to_now(candidate.job.created_at) %> ago.</small><br />
+<% end %>

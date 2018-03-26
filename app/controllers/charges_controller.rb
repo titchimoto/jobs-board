@@ -12,8 +12,6 @@ class ChargesController < ApplicationController
       flash[:notice] = "You've already paid for that!"
       redirect_to root_path
     end
-    # authorize @charge
-
   end
 
   def create

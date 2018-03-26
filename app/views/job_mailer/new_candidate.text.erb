@@ -1,0 +1,8 @@
+New candidate applied to "<%= @job.title %>"
+ <%= "=" * (@job.title.length + 12) %>
+
+ By: <%= @candidate.user.username %>
+
+ <%= @candidate.body %>
+
+ Visit online at: <%= job_url(@job, anchor: "candidate-#{@candidate.id}") %>

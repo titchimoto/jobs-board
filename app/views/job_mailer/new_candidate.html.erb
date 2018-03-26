@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>New candidate applied to "<%= @job.title %>"</h1>
+    <small>
+      By: <%= @candidate.user.username %>
+    </small>
+    <p>
+      <%= @candidate.body %>
+    </p>
+    <p>
+
+      <%= link_to "View Candidate on EMPLOY.", job_url(@job, anchor: "comment-#{@candidate.id}") %>
+    </p>
+  </body>
+</html>

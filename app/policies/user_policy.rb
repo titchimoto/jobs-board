@@ -9,12 +9,12 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    user.present? && (user == users || user.employer?)
+    user.present? && (user == users || user.employer? || user.admin?)
   end
 
 
   def update?
-    user == users
+    user.present? && user == users
   end
 
 

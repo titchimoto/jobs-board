@@ -2,7 +2,7 @@ class ChargesController < ApplicationController
 
   def new
     @stripe_btn_data = {
-      key: ENV['STRIPE_PUBLISHABLE_KEY'],
+      key: "#{ Rails.configuration.stripe[:publishable_key] }",
       description: "Employ Employer Membership - #{current_user.email}",
       amount: 1000
     }

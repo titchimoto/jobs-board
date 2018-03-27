@@ -1,7 +1,7 @@
 class ChargesController < ApplicationController
 
   def new
-    # current_user.employer? redirect back to root -> already upgraded?
+    Stripe.setPublishableKey(ENV['STRIPE_PUBLISHABLE_KEY'])
     @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
       description: "Employ Employer Membership - #{current_user.email}",

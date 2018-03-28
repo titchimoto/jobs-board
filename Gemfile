@@ -54,6 +54,7 @@ source 'https://rubygems.org'
  gem 'ionicons-rails'
 
  gem "paperclip", "~> 6.0.0"
+ gem 'aws-sdk-s3'
 
 
 group :test do

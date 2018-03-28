@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+  has_attached_file :resume, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: ""
+  validates_attachment :resume, :content_type => {:content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document)}
+
   enum role: [:standard, :employer, :admin]
 
   has_many :jobs, dependent: :destroy

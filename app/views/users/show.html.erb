@@ -3,7 +3,6 @@
   <div class="text-center"><%= image_tag @user.avatar_url(96), class: 'rounded-circle' %></div>
 
   <h1 class="text-center"><%= @user.username %></h1>
-  <!-- <span class="text-center badge badge-light"><%= @user.role.capitalize %></span> -->
 
   <h6 class="text-center"><%= @user.email %></h6>
   <p class="text-center">About <%= @user.username %>: </p>
@@ -12,7 +11,13 @@
   <% elsif @user.employer? && !@user.bio %>
     <em><p class="text-center">Edit your Profile to tell prospective employees a little something about your business.</p></em>
   <% else %>
-    <p class="text-center users-bio"><%= @user.bio %></p>
+    <div class="users-bio"><%= simple_format(@user.bio) %></div>
+  <% end %>
+
+  <% if @user.resume.file? %>
+    <%= link_to "Download My Resume", @user.resume.url, class: 'resume-button btn btn-success btn-block btn-lg' %>
+  <% else %>
+    <div class="resume-button btn btn-danger btn-block">No Resume Available</div>
   <% end %>
 
 

@@ -19,11 +19,17 @@
     </ul>
   </div>
   <div class="col-md-8">
-    <%= form_for @user do |f| %>
+    <%= form_for @user, html: { multipart: true } do |f| %>
 
       <div class="form-group">
         <%= f.label :bio %>
-        <%= f.text_area :bio, rows: 8, class: 'form-control', placeholder: 'Tell prospective employers a little something about yourself...' %>
+        <%= f.text_area :bio, rows: 12, class: 'form-control', placeholder: 'Tell prospective employers a little something about yourself...' %>
+      </div>
+
+      <div class="form-group">
+        <h4>Upload a Resume</h4>
+        <p><small>.pdf or .doc file types accepted.</small></p>
+        <%= f.file_field :resume %>
       </div>
 
       <div class="form-group">

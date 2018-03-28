@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-9">
-    <p><%= @job.body %></p>
+    <p><%= simple_format(@job.body) %></p>
 
     <% if current_user && !user_is_job_owner %>
       <%= render 'candidates/form', candidate: Candidate.new, job: @job %>

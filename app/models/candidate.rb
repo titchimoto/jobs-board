@@ -2,7 +2,7 @@ class Candidate < ApplicationRecord
   belongs_to :job
   belongs_to :user
 
-  validates :body, length: { minimum: 5, maximum: 500 }, presence: true
+  validates :body, length: { minimum: 5, maximum: 10000 }, presence: true
   validates :user, presence: true
 
   after_create :send_candidate_emails

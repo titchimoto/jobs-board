@@ -53,6 +53,8 @@ source 'https://rubygems.org'
 
  gem 'ionicons-rails'
 
+ gem "paperclip", "~> 6.0.0"
+
 
 group :test do
   gem 'faker'
